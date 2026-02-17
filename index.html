@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surecart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Sure<span>Cart</span></div>
+
+        <div class="nav-links">
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+        </div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search products...">
+            <span class="find-btn">Find</span>
+        </div>
+
+        <a href="#" class="btn-account">Create Account</a>
+    </nav>
+
+    <section class="hero-container">
+        <div class="hero-info">
+            <h1>Next-Gen Tech</h1>
+            <p>Home of the latest premium gadgets for your daily life.</p>
+            <button class="hero-btn">Shop Now</button>
+        </div>
+
+        <div class="glass-card">    
+            <img src="heroimage.png" alt="Featured Tech" class="hero-img">
+        </div>
+    </section>
+
+    <section class="products-container" id="products">
+        <h2 class="section-heading">Featured Products</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <img src="iphone.jpg" alt="Product 1" class="product-img">
+                <div class="card-details">
+                    <h3>Iphone 17 Pro max</h3>
+                    <p class="price">$1999.99</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="glasses.png" alt="Product 2" class="product-img">
+                <div class="card-details">
+                    <h3>Meta Ray-Bans</h3>
+                    <p class="price">$199.99</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="headphones.jpg" alt="Product 3" class="product-img">
+                <div class="card-details">
+                    <h3>Sony XM5's</h3>
+                    <p class="price">$129.99</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="watch.png" alt="Product 4" class="product-img">
+                <div class="card-details">
+                    <h3>Apple Watch Ultra 3</h3>
+                    <p class="price">$199.99</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="ps5.png" alt="Product 5" class="product-img">
+                <div class="card-details">
+                    <h3>PlayStation 5</h3>
+                    <p class="price">$639.99</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="earbuds.png" alt="Product 6" class="product-img">
+                <div class="card-details">
+                    <h3>Sony WF-1000XM5</h3>
+                    <p class="price">$299.00</p>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="about">
+        <div class="footer-content">
+            
+            <div class="footer-left">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com">Instagram</a>
+                    <a href="https://www.facebook.com">Facebook</a>
+                    <a href="https://www.tiktok.com">Tiktok</a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <p>Email: support@surecart.com</p>
+                <p>WhatsApp: +123 456 7890</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 SureCart. All Rights Reserved.
+        </div>
+    </footer>
+
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" id="close-login">&times;</span>
+            
+            <h2>Welcome Back</h2>
+            <p class="modal-subtitle">Login to your account</p>
+
+            <form class="login-form">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" placeholder="Enter your username" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password-input" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="submit-btn" style="margin-top: 20px;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
