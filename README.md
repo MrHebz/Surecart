@@ -7,4 +7,5 @@ When making commits, please:
 -Add comments with your commits to aid legibility and readability.
 
 We believe you should adhere to the guidelines and there wont be issues down the road
+                                                                     
                                                                       -SureCart Devs
