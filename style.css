@@ -1,6 +1,10 @@
 /* style.css */
 
-/* 1. DEFINING VARIABLES */
+/* 1. GLOBAL RESET & VARIABLES */
+* {
+    box-sizing: border-box; 
+}
+
 :root {
     --bg-color: #0a0a0a;
     --nav-bg: #1a1a1a;
@@ -13,7 +17,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* Keeps navbar from covering content when scrolling */
     scroll-padding-top: 100px; 
 }
 
@@ -22,6 +25,7 @@ body {
     font-family: 'Segoe UI', Verdana, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden; /* Prevents side-scrolling on phones */
 }
 
 /* NAVBAR */
@@ -36,16 +40,39 @@ body {
     color: var(--text-color);
     position: relative;
     z-index: 100;
+    flex-wrap: wrap; /* Allows wrapping on phones */
 }
 
 .logo {
     font-size: 28px;
     font-weight: bold;
     letter-spacing: -1px;
+    margin-right: 20px;
 }
 
 .logo span {
     color: var(--accent-color);
+}
+
+/* NEW CART STYLES */
+.cart-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.cart-count {
+    background-color: white;
+    color: black;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 12px;
 }
 
 .nav-links {
@@ -101,6 +128,7 @@ body {
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    white-space: nowrap;
 }
 .btn-account:hover {
     opacity: 0.9;
@@ -155,6 +183,7 @@ body {
     justify-content: center;
     overflow: hidden;
     border-radius: 30px;
+    /* Removed fixed width here so it is responsive */
 }
 
 .hero-img {
@@ -234,11 +263,10 @@ body {
     opacity: 0.9;
 }
 
-/* --- ABOUT / FOOTER SECTION --- */
-
+/* --- ABOUT / FOOTER --- */
 footer {
     background-color: var(--nav-bg);
-    padding: 40px 10%;
+    padding: 40px 0 0 0; 
     margin-top: 50px;
     border-top: 1px solid #333;
 }
@@ -247,8 +275,9 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap; /* Allows stacking */
+    flex-wrap: wrap; 
     margin-bottom: 30px;
+    padding: 0 10%; 
 }
 
 .footer-left, .footer-right {
@@ -267,7 +296,7 @@ footer h3 {
 }
 
 .social-links a {
-    display: block; /* Makes them stack vertically */
+    display: block; 
     color: var(--text-muted);
     text-decoration: none;
     margin-bottom: 8px;
@@ -287,16 +316,16 @@ footer h3 {
 
 .copyright {
     text-align: center;
-    border-top: 1px solid #333;
-    padding-top: 20px;
+    border-top: 1px solid #333; 
+    padding: 20px 0;
     color: #666;
     font-size: 14px;
+    width: 100%;
 }
 
-/* --- LOGIN MODAL STYLES --- */
-
+/* --- LOGIN MODAL --- */
 .modal-overlay {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed; 
     z-index: 1000;
     left: 0;
@@ -348,7 +377,6 @@ footer h3 {
     font-size: 14px;
 }
 
-/* Form Styling */
 .input-group {
     text-align: left;
     margin-bottom: 20px;
@@ -369,16 +397,13 @@ footer h3 {
     border-radius: 8px;
     color: white;
     font-size: 16px;
-    box-sizing: border-box;
     outline: none;
 }
 
-/* Dark Magenta border on focus */
 .input-group input:focus {
     border-color: darkmagenta; 
 }
 
-/* Login Button Styling */
 .submit-btn {
     width: 100%;
     padding: 14px;
@@ -394,4 +419,62 @@ footer h3 {
 
 .submit-btn:hover {
     opacity: 0.9;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE STYLES (MEDIA QUERIES) 
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* Navbar: Stack items vertically */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Hero: Image moves to bottom, Text stays top */
+    .hero-container {
+        flex-direction: column;
+        padding: 40px 5%;
+        text-align: center;
+    }
+
+    .glass-card {
+        width: 100%; /* Full width on phone */
+        height: 350px; /* Smaller height on phone */
+        margin-top: 30px;
+    }
+
+    .hero-info h1 {
+        font-size: 42px; /* Smaller text for phone */
+    }
+
+    /* Products: 1 Column instead of 3 */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer: Stack left and right sections */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
 }
