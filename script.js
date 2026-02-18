@@ -25,45 +25,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // --- 2. ADD TO CART LOGIC ---
-    // Start count at 0
+    // --- 2. ADD TO CART LOGIC (CLEAN VERSION) ---
     let cartCounter = 0;
-    
-    // Select the number in the navbar
     const cartCountElement = document.querySelector('.cart-count');
-    
-    // Select ALL "Add to Cart" buttons
     const addButtons = document.querySelectorAll('.add-cart-btn');
 
-    // Loop through each button to add the click event
     addButtons.forEach(button => {
         button.addEventListener('click', function() {
             
             // 1. Increase the math
-            cartCounter = cartCounter + 1;
+            cartCounter++;
             
             // 2. Update the number on the screen
             if(cartCountElement) {
                 cartCountElement.innerText = cartCounter;
             }
-
-            // 3. Visual Feedback (Make button Green)
-            const originalText = button.innerText;
-            const originalColor = button.style.backgroundColor;
-            const originalTextColor = button.style.color;
-
-            // Change style to Green/Added
-            button.innerText = "Added!";
-            button.style.backgroundColor = "#2ecc71"; // Nice Green color
-            button.style.color = "white";
-
-            // Wait 1 second, then change it back
-            setTimeout(() => {
-                button.innerText = originalText;
-                button.style.backgroundColor = ""; // Revert to CSS default
-                button.style.color = ""; // Revert to CSS default
-            }, 1000);
-
+            
+            // Removed the Green Color and "Added!" text logic
         });
     });
 
