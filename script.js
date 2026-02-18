@@ -1,54 +1,69 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // 1. Get the elements
+    // --- 1. LOGIN MODAL LOGIC ---
     const loginModal = document.getElementById('login-modal');
-    const openLoginBtn = document.querySelector('.btn-account'); // Create Account button
-    const closeLoginBtn = document.getElementById('close-login'); // X button
+    const openLoginBtn = document.querySelector('.btn-account'); 
+    const closeLoginBtn = document.getElementById('close-login'); 
 
-    // 2. Open Modal
     if(openLoginBtn) {
         openLoginBtn.addEventListener('click', (e) => {
-            e.preventDefault(); // Stop the link from jumping
+            e.preventDefault();
             loginModal.style.display = 'flex';
         });
     }
 
-    // 3. Close Modal (Click X)
     if(closeLoginBtn) {
         closeLoginBtn.addEventListener('click', () => {
             loginModal.style.display = 'none';
         });
     }
 
-    // 4. Close Modal (Click Outside)
+    // Close modal if clicking outside the box
     window.addEventListener('click', (e) => {
         if (e.target === loginModal) {
             loginModal.style.display = 'none';
         }
     });
 
-
-});
-
-// --- NEW: ADD TO CART LOGIC ---
+    // --- 2. ADD TO CART LOGIC ---
+    // Start count at 0
     let cartCounter = 0;
-    const countDisplay = document.querySelector('.cart-count');
+    
+    // Select the number in the navbar
+    const cartCountElement = document.querySelector('.cart-count');
+    
+    // Select ALL "Add to Cart" buttons
     const addButtons = document.querySelectorAll('.add-cart-btn');
 
+    // Loop through each button to add the click event
     addButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Increase the number
-            cartCounter++;
+        button.addEventListener('click', function() {
             
-            // Update the text in the navbar
-            countDisplay.innerText = cartCounter;
+            // 1. Increase the math
+            cartCounter = cartCounter + 1;
             
-            // Optional: Change button text temporarily to "Added!"
-            let originalText = button.innerText;
+            // 2. Update the number on the screen
+            if(cartCountElement) {
+                cartCountElement.innerText = cartCounter;
+            }
+
+            // 3. Visual Feedback (Make button Green)
+            const originalText = button.innerText;
+            const originalColor = button.style.backgroundColor;
+            const originalTextColor = button.style.color;
+
+            // Change style to Green/Added
             button.innerText = "Added!";
+            button.style.backgroundColor = "#2ecc71"; // Nice Green color
+            button.style.color = "white";
+
+            // Wait 1 second, then change it back
             setTimeout(() => {
                 button.innerText = originalText;
+                button.style.backgroundColor = ""; // Revert to CSS default
+                button.style.color = ""; // Revert to CSS default
             }, 1000);
+
         });
     });
 
