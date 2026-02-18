@@ -34,9 +34,9 @@ body {
     align-items: center;
     justify-content: space-between;
     background-color: var(--nav-bg);
-    padding: 15px 40px;
+    padding: 10px 30px;
     margin: 20px;
-    border-radius: 50px; /* Rounded navbar edges */
+    border-radius: 50px;
     color: var(--text-color);
     position: relative;
     z-index: 100;
@@ -54,7 +54,7 @@ body {
     color: var(--accent-color);
 }
 
-/* --- CART STYLES --- */
+/* --- CART STYLE --- */
 .cart-box {
     display: flex;
     align-items: center;
@@ -62,15 +62,16 @@ body {
     font-weight: bold;
     margin-right: 20px;
     color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    padding: 8px 15px;
-    border-radius: 20px; /* Pill shape for cart */
+    border: 2px solid var(--accent-color);
+    padding: 6px 15px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
 .cart-box:hover {
-    background-color: rgba(139, 0, 139, 0.2);
+    background-color: var(--accent-color);
+    color: white;
 }
 
 .cart-count {
@@ -98,26 +99,26 @@ body {
     color: var(--text-color);
 }
 
-/* --- SEARCH BAR (FIXED PILL LOOK) --- */
+/* --- SEARCH BAR FIXED --- */
 .search-container {
     display: flex;
     align-items: center;
-    background-color: var(--input-bg);
-    border-radius: 50px; /*Pill Shape */
-    padding: 5px 15px; /* More padding for pill look */
+    background-color: white; /* White background is on the container now */
+    border-radius: 50px; 
+    padding: 5px 20px; 
     flex-grow: 0.4;
     margin: 0 20px;
-    min-width: 250px; /* Prevents it from getting squashed */
+    min-width: 200px; 
 }
 
 .search-container input {
     border: none;
-    background: transparent;
+    background: transparent; /* Input is transparent */
     padding: 8px;
     width: 100%;
     outline: none;
     font-size: 14px;
-    color: black;
+    color: black; /* Text is black */
 }
 
 .find-btn {
@@ -127,13 +128,14 @@ body {
     font-size: 12px;
     cursor: pointer;
     margin-left: 10px;
+    white-space: nowrap;
 }
 
 .btn-account {
-    background-color: var(--input-bg);
+    background-color: white;
     color: black;
     padding: 10px 25px;
-    border-radius: 25px; /* Pill shape */
+    border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     white-space: nowrap;
@@ -255,7 +257,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* ADD TO CART BUTTON */
 .add-cart-btn {
     width: 100%;
     padding: 12px;
@@ -266,7 +267,7 @@ body {
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s ease; /* Animation for color change */
+    transition: opacity 0.3s;
 }
 
 .add-cart-btn:hover {
@@ -316,6 +317,12 @@ footer h3 {
 
 .social-links a:hover {
     color: white;
+}
+
+.footer-right p {
+    color: var(--text-muted);
+    margin: 5px 0;
+    font-size: 16px;
 }
 
 .copyright {
@@ -414,7 +421,7 @@ footer h3 {
     .navbar {
         flex-direction: column;
         padding: 15px;
-        border-radius: 20px; /* Slightly less round on mobile to save space */
+        border-radius: 20px; 
     }
     .search-container {
         width: 100%;
