@@ -27,4 +27,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+
+});
+
+// --- NEW: ADD TO CART LOGIC ---
+    let cartCounter = 0;
+    const countDisplay = document.querySelector('.cart-count');
+    const addButtons = document.querySelectorAll('.add-cart-btn');
+
+    addButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Increase the number
+            cartCounter++;
+            
+            // Update the text in the navbar
+            countDisplay.innerText = cartCounter;
+            
+            // Optional: Change button text temporarily to "Added!"
+            let originalText = button.innerText;
+            button.innerText = "Added!";
+            setTimeout(() => {
+                button.innerText = originalText;
+            }, 1000);
+        });
+    });
+
 });
