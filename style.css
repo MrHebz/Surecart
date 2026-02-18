@@ -103,7 +103,7 @@ body {
     display: flex;
     align-items: center;
     background-color: var(--input-bg);
-    border-radius: 50px; /* Strong Pill Shape */
+    border-radius: 50px; /*Pill Shape */
     padding: 5px 15px; /* More padding for pill look */
     flex-grow: 0.4;
     margin: 0 20px;
