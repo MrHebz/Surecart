@@ -201,6 +201,14 @@ body {
     width: 150%;
     height: 200%;
     object-fit: cover;
+     animation: image-animation 5s infinite ;
+}
+
+@keyframes image-animation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(50px); }
+    100% { transform: translateY(0px); }
+}
 }
 
 /* PRODUCTS */
@@ -454,6 +462,33 @@ footer h3 {
     .footer-right {
         text-align: center;
     }
+    /*Animation*/
+    @media (max-width: 767px) {
+    .hero-img {
+    width: 150%;
+    height: 200%;
+    object-fit: cover;
+    animation: image-animation 5s infinite ;
+}
+
+@keyframes image-animation {
+    0% { transform: translatex(-70px); }
+    50% { transform: translatex(10px); }
+    100% { transform: translatex(-70px); }}
+@media (max-width: 480px) {
+     .hero-img {
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+    animation: image-animation 5s infinite ;
+}
+
+@keyframes image-animation {
+    0% { transform: translatex(-50px); }
+    50% { transform: translatex(10px); }
+    100% { transform: translatex(-50px); }
+}}
+}
 }
 
 /* --- SOLD OUT STYLES --- */
@@ -475,5 +510,6 @@ footer h3 {
     font-size: 14px;
     cursor: not-allowed; /* Gives the user a "stop" cursor when they hover */
 }
+
 
 
