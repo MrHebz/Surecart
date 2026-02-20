@@ -25,23 +25,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // --- 2. ADD TO CART LOGIC (CLEAN VERSION) ---
+    // --- 2. ADD TO CART LOGIC ---
     let cartCounter = 0;
     const cartCountElement = document.querySelector('.cart-count');
     const addButtons = document.querySelectorAll('.add-cart-btn');
 
     addButtons.forEach(button => {
         button.addEventListener('click', function() {
-            
-            // 1. Increase the math
+            // Just increase the number. Nothing else.
             cartCounter++;
             
-            // 2. Update the number on the screen
             if(cartCountElement) {
                 cartCountElement.innerText = cartCounter;
             }
-            
-            // Removed the Green Color and "Added!" text logic
         });
     });
 
