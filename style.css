@@ -257,6 +257,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* ADD TO CART BUTTON */
 .add-cart-btn {
     width: 100%;
     padding: 12px;
@@ -267,13 +268,12 @@ body {
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s; /* Only fades slightly on hover */
 }
 
 .add-cart-btn:hover {
     opacity: 0.9;
 }
-
 /* FOOTER */
 footer {
     background-color: var(--nav-bg);
@@ -455,3 +455,4 @@ footer h3 {
         text-align: center;
     }
 }
+
