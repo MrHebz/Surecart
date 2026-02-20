@@ -456,3 +456,24 @@ footer h3 {
     }
 }
 
+/* --- SOLD OUT STYLES --- */
+.sold-out-text {
+    color: red;
+    font-style: italic;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.disabled-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #444; /* Dark grey to show it's inactive */
+    color: #888; /* Faded text */
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: not-allowed; /* Gives the user a "stop" cursor when they hover */
+}
+
+
