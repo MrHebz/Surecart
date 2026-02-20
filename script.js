@@ -29,14 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let cartCounter = 0;
     const cartCountElement = document.querySelector('.cart-count');
     const addButtons = document.querySelectorAll('.add-cart-btn');
-    
-    // The main cart box in the navbar
     const cartBox = document.querySelector('.cart-box');
 
-    // Logic for clicking the "Add to Cart" buttons
     addButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Increase the number
             cartCounter++;
             if(cartCountElement) {
                 cartCountElement.innerText = cartCounter;
@@ -47,27 +43,56 @@ document.addEventListener("DOMContentLoaded", function() {
     // --- 3. CHECKOUT LOGIC (Click the Cart) ---
     if(cartBox) {
         cartBox.addEventListener('click', function() {
-            // 1. Reset the math back to 0
             cartCounter = 0;
             if(cartCountElement) {
                 cartCountElement.innerText = cartCounter;
             }
 
-            // 2. Make the Cart box turn Green
-            cartBox.style.backgroundColor = "green"; // Green color
-            cartBox.style.borderColor = "green";
+            cartBox.style.backgroundColor = "#2ecc71"; 
+            cartBox.style.borderColor = "#2ecc71";
             cartBox.style.color = "white";
 
-            // Optional: Give the user an alert to show it "worked"
             alert("Checkout complete! Your details will be sent to your email.");
 
-            // 3. Wait 1.5 seconds, then change the colors back to normal
             setTimeout(() => {
                 cartBox.style.backgroundColor = ""; 
                 cartBox.style.borderColor = "";
                 cartBox.style.color = "";
             }, 1500);
         });
+    }
+
+    // --- 4. SEARCH BAR LOGIC ---
+    const searchInput = document.querySelector('.search-container input');
+    const searchBtn = document.querySelector('.find-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    function performSearch() {
+        // Get what the user typed and make it lowercase
+        const searchTerm = searchInput.value.toLowerCase();
+
+        // Loop through every single product card on the page
+        productCards.forEach(card => {
+            // Find the <h3> tag inside this card and get the product name
+            const productName = card.querySelector('h3').innerText.toLowerCase();
+            
+            // If the product name includes the letters the user typed...
+            if (productName.includes(searchTerm)) {
+                card.style.display = "flex"; // Show it (your CSS uses flex for cards)
+            } else {
+                card.style.display = "none"; // Hide it
+            }
+        });
+    }
+
+    // Trigger the search every time the user types a letter
+    if(searchInput) {
+        searchInput.addEventListener('input', performSearch);
+    }
+
+    // Also trigger the search if they click the "FIND" button
+    if(searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
     }
 
 });
