@@ -62,37 +62,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // --- 4. SEARCH BAR LOGIC ---
-    const searchInput = document.querySelector('.search-container input');
-    const searchBtn = document.querySelector('.find-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    function performSearch() {
-        // Get what the user typed and make it lowercase
-        const searchTerm = searchInput.value.toLowerCase();
-
-        // Loop through every single product card on the page
-        productCards.forEach(card => {
-            // Find the <h3> tag inside this card and get the product name
-            const productName = card.querySelector('h3').innerText.toLowerCase();
-            
-            // If the product name includes the letters the user typed...
-            if (productName.includes(searchTerm)) {
-                card.style.display = "flex"; // Show it (your CSS uses flex for cards)
-            } else {
-                card.style.display = "none"; // Hide it
-            }
-        });
-    }
-
-    // Trigger the search every time the user types a letter
-    if(searchInput) {
-        searchInput.addEventListener('input', performSearch);
-    }
-
-    // Also trigger the search if they click the "FIND" button
-    if(searchBtn) {
-        searchBtn.addEventListener('click', performSearch);
-    }
-
-});
+   
