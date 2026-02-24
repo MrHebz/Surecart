@@ -1,29 +1,33 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- 1. LOGIN MODAL LOGIC ---
+    // 1. Get the elements
     const loginModal = document.getElementById('login-modal');
-    const openLoginBtn = document.querySelector('.btn-account'); 
-    const closeLoginBtn = document.getElementById('close-login'); 
+    const openLoginBtn = document.querySelector('.btn-account'); // Create Account button
+    const closeLoginBtn = document.getElementById('close-login'); // X button
 
+    // 2. Open Modal
     if(openLoginBtn) {
         openLoginBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault(); // Stop the link from jumping
             loginModal.style.display = 'flex';
         });
     }
 
+    // 3. Close Modal (Click X)
     if(closeLoginBtn) {
         closeLoginBtn.addEventListener('click', () => {
             loginModal.style.display = 'none';
         });
     }
 
-    // Close modal if clicking outside the box
+    // 4. Close Modal (Click Outside)
     window.addEventListener('click', (e) => {
         if (e.target === loginModal) {
             loginModal.style.display = 'none';
         }
     });
+
+});
 
     // --- 2. ADD TO CART LOGIC ---
     let cartCounter = 0;
@@ -63,3 +67,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
    
+
