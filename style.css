@@ -209,7 +209,6 @@ body {
     50% { transform: translateY(50px); }
     100% { transform: translateY(0px); }
 }
-}
 
 /* PRODUCTS */
 .products-container {
@@ -510,6 +509,7 @@ footer h3 {
     font-size: 14px;
     cursor: not-allowed; /* Gives the user a "stop" cursor when they hover */
 }
+
 
 
 
