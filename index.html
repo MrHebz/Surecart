@@ -145,6 +145,28 @@
             </form>
         </div>
     </div>
+
+    <!-- Floating Cart Button -->
+<div id="floating-cart-btn" class="floating-cart-btn">
+  🛒
+  <span id="floating-cart-count" class="floating-cart-count">0</span>
+</div>
+
+<!-- Mini Cart Popup -->
+<div id="mini-cart-popup" class="mini-cart-popup hidden">
+  <div class="mini-cart-header">
+    <h3>Your Cart</h3>
+    <button id="close-mini-cart" class="close-mini-cart">&times;</button>
+  </div>
+  <div id="mini-cart-items" class="mini-cart-items">
+    <!-- Cart items will be dynamically inserted here by JS -->
+    <p class="empty-cart-msg">Your cart is empty.</p>
+  </div>
+  <div class="mini-cart-footer">
+    <button id="mini-checkout-btn" class="mini-checkout-btn">Checkout</button>
+  </div>
+</div>
+    
     <script src="script.js"></script>
 
 </body>
